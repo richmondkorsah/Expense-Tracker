@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head%}
+<title>Expense Tracker</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center;">Expense Tracker</h1>
+    {% if expenses|length < 1 %}
+    <h4 style="text-align: center;">The databese is empty. Track expenses below!</h4>
+    {% else %}
+
+    <div class="table">
+    <table border="1" cellpadding="5" cellspacing="5">
+        <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Date Created</th>
+            <th>Actions</th>
+        </tr>
+        {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.item}}</td>
+                <td>{{ expense.category }}</td>
+                <td>{{ expense.amount }}</td>
+                <td>{{ expense.date_added.date() }}</td>
+                <td>
+                    <a href="/delete/{{expense.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{expense.id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+    {% endif %}
+    <div class="form-input">
+        <form action="/" method="POST">
+            <br>
+                <label for="item">Item: </label>
+                <input type="text" name="item" id="item" placeholder="eg. Jollof Rice">
+                <br>
+
+                <label for="category">Category: </label>
+                <select name="category" id="category">
+                    <option value="Food" id="food">Food</option>
+                    <option value="Transport" id="transport">Transport</option>
+                    <option value="Misc" id="misc">Misc</option>
+                    <option value="Clothing" id="clothing">Clothing</option>
+                </select>
+                <br>
+
+                <label for="amount">Amount: </label>
+                <input type="number" name="amount" id="amount" placeholder="eg. 50">
+                <br>
+
+                <div class="submit">
+                    <input type="submit" value="Add Task">
+                </div>          
+        </form>
+    </div>
+</div>
+{% endblock %}
