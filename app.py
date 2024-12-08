@@ -23,7 +23,8 @@ def index():
     if request.method == 'POST':
         expense_item = request.form['item']
         expense_category = request.form['category']
-        expense_amount = request.form['amount']
+        expense_amount = float(request.form['amount']) 
+        expense_amount = round(expense_amount, 2) 
 
         new_expense = Expense(item=expense_item, category=expense_category, amount=expense_amount)
 
