@@ -1,0 +1,55 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  /* Increased gap for spacing */
+    width: 100%;
+    max-width: 600px;  /* Ensure form doesn't stretch too wide */
+    margin: 0 auto;  /* Center form */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;  /* Ensures inputs and select are of the same length */
+}
+
+button.submit {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Make button the same width as the inputs */
+}
+
+button.submit:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-group {
+        gap: 15px;
+    }
+
+    input[type="text"], input[type="number"], select, button.submit {
+        width: 100%;
+    }
+}

@@ -1,27 +1,93 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.content {
-    width: 80%;
-    margin: auto;
+body {
+    background: linear-gradient(to bottom, #c2e9fb, #a1c4fd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 20px;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.container {
+    width: 100%; /* Ensure container takes up the full width */
+    max-width: 800px; /* Match card max width */
+    display: flex;
+    flex-direction: column; /* Stack card and footer */
+    gap: 30px; /* Increased gap for better separation */
+    align-items: center; /* Center align the container */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%; /* Ensure card takes full width of container */
+    max-width: 800px; /* Set a max width for the card */
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
 }
 
-h4 {
-    text-align: center;
+.form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+}
+
+input[type="text"] {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button.submit {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.submit:hover {
+    background-color: #218838;
 }
 
 .table {
-    margin-top: 20px;
+    overflow-x: auto;
+    width: 100%;
 }
 
 table {
@@ -29,57 +95,84 @@ table {
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-table th, table td {
+th, td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
 }
 
-table th {
-    background-color: #f2f2f2;
+thead th {
+    background-color: #f4f4f4;
 }
 
-table td {
-    background-color: #ffffff;
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.actions a {
-    text-decoration: none;
-    color: #333333;
-    margin-right: 10px;
-}
-
-.form-input {
-    margin-top: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="number"],
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.submit input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    color: #ffffff;
+a.delete-btn, a.update-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.9rem;
     border-radius: 5px;
     cursor: pointer;
+    border: none;
+    margin: 2px 0;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
 }
 
-.submit input[type="submit"]:hover {
-    background-color: #0056b3;
+a.delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+a.update-btn {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+a.delete-btn:hover {
+    background-color: #c82333;
+}
+
+a.update-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Footer Design */
+.footer {
+    width: 100%;
+    max-width: 800px; /* Same width as the .card */
+    background-color: #fff;
+    padding: 10px 0;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+    border-radius: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group input[type="text"],
+    .form-group button.submit {
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 0.9rem;
+    }
+
+    button.delete-btn, button.update-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
