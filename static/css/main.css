@@ -155,6 +155,37 @@ a.update-btn:hover {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Suggestions box styling */
+.suggestions-box {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 50%; /* Ensure the suggestion box matches the card width */
+    left: 0; /* Align to the left edge of the form */
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    margin-top: 5px; /* Add space between input and suggestion box */
+    box-sizing: border-box; /* Ensures the padding/border is included in the width */
+}
+
+/* Ensure the suggestion box aligns properly under the input field */
+.form-group {
+    position: relative; /* Required to position suggestions box absolutely within this div */
+}
+
+/* Additional styling for suggestions box items */
+.suggestions-box div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions-box div:hover {
+    background-color: #f1f1f1;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
     .form-group {

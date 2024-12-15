@@ -15,14 +15,33 @@
         <div class="form">
             <form action="/" method="POST">
                 <div class="form-group">
-                    <input type="text" id="item" name="item" placeholder="Item">
+                    <div class="autocomplete">
+                        <input type="text" id="item" name="item" placeholder="Item">
+                        <div id="item-suggestions" class="suggestions-box"></div>
+                    </div>
 
                     <select name="category" id="category">
                         <option value="Food" id="food">Food</option>
-                        <option value="Transport" id="transport">Transport</option>
-                        <option value="Misc" id="misc">Misc</option>
-                        <option value="Clothing" id="clothing">Clothing</option>
-                    </select>
+                        <option value="Transportation" id="transportation">Transportation</option>
+                        <option value="Housing" id="housing">Housing</option>
+                        <option value="Utilities" id="utilities">Utilities</option>
+                        <option value="Entertainment" id="entertainment">Entertainment</option>
+                        <option value="Healthcare" id="healthcare">Healthcare</option>
+                        <option value="Education" id="education">Education</option>
+                        <option value="Savings" id="savings">Savings</option>
+                        <option value="Insurance" id="insurance">Insurance</option>
+                        <option value="Debt" id="debt">Debt</option>
+                        <option value="Personal" id="personal">Personal</option>
+                        <option value="Gifts" id="gifts">Gifts</option>
+                        <option value="Charity" id="charity">Charity</option>
+                        <option value="Travel" id="travel">Travel</option>
+                        <option value="Subscriptions" id="subscriptions">Subscriptions</option>
+                        <option value="Business" id="business">Business</option>
+                        <option value="Pets" id="pets">Pets</option>
+                        <option value="Technology" id="technology">Technology</option>
+                        <option value="Fitness" id="fitness">Fitness</option>
+                        <option value="Other" id="other">Other</option>
+                    </select>                    
 
                     <input type="text" id="amount" name="amount" placeholder="Amount">
 
