@@ -18,16 +18,22 @@
             <div class="form-group">
                 <label for="category">Category: </label>
                 <select name="category" id="category">
-                    <option value="Food" {% if expense.category == 'Food' %} selected {% endif %}>Food</option>
-                    <option value="Transport" {% if expense.category == 'Transport' %} selected {% endif %}>Transport</option>
-                    <option value="Misc" {% if expense.category == 'Misc' %} selected {% endif %}>Misc</option>
-                    <option value="Clothing" {% if expense.category == 'Clothing' %} selected {% endif %}>Clothing</option>
+                    <option value="Food" id="food" {% if expense.category == 'Food' %} selected {% endif %}>Food</option>
+                    <option value="Transportation" id="transportation" {% if expense.category == 'Transportation' %} selected {% endif %}>Transportation</option>
+                    <option value="Leisure" id="leisure" {% if expense.category == 'Leisure' %} selected {% endif %}>Leisure</option>
+                    <option value="Utilities" id="utilities" {% if expense.category == 'Utilities' %} selected {% endif %}>Utilities</option>
+                    <option value="Healthcare" id="healthcare" {% if expense.category == 'Healthcare' %} selected {% endif %}>Healthcare</option>
+                    <option value="Education" id="education" {% if expense.category == 'Education' %} selected {% endif %}>Education</option>
+                    <option value="Personal" id="personal" {% if expense.category == 'Personal' %} selected {% endif %}>Personal</option>
+                    <option value="Computing" id="computing" {% if expense.category == 'Computing' %} selected {% endif %}>Computing</option>
+                    <option value="Subscriptions" id="subscriptions" {% if expense.category == 'Subscriptions' %} selected {% endif %}>Subscriptions</option>
+                    <option value="Other" id="other" {% if expense.category == 'Other' %} selected {% endif %}>Other</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="amount">Amount: </label>
-                <input type="number" name="amount" id="amount" value="{{ expense.amount }}" placeholder="Amount">
+                <input type="number" step="any" name="amount" id="amount" value="{{ expense.amount }}" placeholder="Amount">
             </div>
 
             <button class="submit" type="submit">Update</button>

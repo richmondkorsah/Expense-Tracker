@@ -36,7 +36,10 @@ def index():
             return 'There was an issue adding the expense'
     else:
         expenses = Expense.query.order_by(Expense.date_added).all()
-        return render_template('index.html', expenses=expenses)
+        total_amount = db.session.query(db.func.sum(Expense.amount)).one_or_none()
+        total_amount = total_amount[0] if total_amount else 0  # Extract the result or set to 0
+        total_amount = round(total_amount, 2)
+        return render_template('index.html', expenses=expenses, total_amount=total_amount)
 
 
 @app.route('/delete/<int:id>')

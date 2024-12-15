@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
 }
 
 .card {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -38,6 +38,7 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.8rem;
+    color: #333;
 }
 
 .form {
@@ -54,35 +55,40 @@ h1 {
     max-width: 800px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"],
+select {
     flex: 1;
     min-width: 150px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
     font-size: 1rem;
+    background-color: #f8fafc;
+    transition: box-shadow 0.3s ease;
 }
 
-select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+    border-color: #3b82f6;
 }
 
 button.submit {
-    background-color: #28a745;
-    color: #fff;
+    background-color: #3b82f6;
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button.submit:hover {
-    background-color: #218838;
+    background-color: #2563eb;
+    transform: scale(1.05);
 }
 
 .table {
@@ -95,20 +101,27 @@ table {
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
     padding: 10px;
     text-align: center;
+    font-size: 1rem;
 }
 
 thead th {
-    background-color: #f4f4f4;
+    background-color: #eff6ff;
+    color: #1f2937;
+    font-weight: 600;
 }
 
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f0f4f8;
 }
 
 a.delete-btn, a.update-btn {
@@ -124,42 +137,57 @@ a.delete-btn, a.update-btn {
 }
 
 a.delete-btn {
-    background-color: #dc3545;
+    background-color: #ef4444;
     color: #fff;
 }
 
 a.update-btn {
-    background-color: #ffc107;
+    background-color: #fbbf24;
     color: #fff;
 }
 
 a.delete-btn:hover {
-    background-color: #c82333;
+    background-color: #dc2626;
 }
 
 a.update-btn:hover {
-    background-color: #e0a800;
+    background-color: #d97706;
+}
+
+
+/* Total Summary */
+.total_amount {
+    width: 100%;
+    color: #6b7280;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+h3 {
+    text-align: center;
+    color: #374151;
 }
 
 /* Footer Design */
 .footer {
     width: 100%;
     max-width: 800px; /* Same width as the .card */
-    background-color: #fff;
-    padding: 10px 0;
+    background-color: #ffffff;
+    padding: 15px 0;
     margin-top: 10px;
     text-align: center;
     font-size: 1rem;
-    color: #777;
+    color: #6b7280;
     border-radius: 10px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
     .form-group {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
     }
 
     .form-group input[type="text"],
@@ -168,7 +196,7 @@ a.update-btn:hover {
     }
 
     th, td {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     button.delete-btn, button.update-btn {

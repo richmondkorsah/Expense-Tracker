@@ -19,12 +19,19 @@
 
                     <select name="category" id="category">
                         <option value="Food" id="food">Food</option>
-                        <option value="Transport" id="transport">Transport</option>
-                        <option value="Misc" id="misc">Misc</option>
-                        <option value="Clothing" id="clothing">Clothing</option>
-                    </select>
+                        <option value="Transportation" id="transportation">Transportation</option>
+                        <option value="Leisure" id="leisure">Leisure</option>
+                        <option value="Utilities" id="utilities">Utilities</option>
+                        <option value="Healthcare" id="healthcare">Healthcare</option>
+                        <option value="Education" id="education">Education</option>
+                        <option value="Computing" id="computing">Computing</option>
+                        <option value="Personal" id="personal">Personal</option>
+                        <option value="Subscriptions" id="subscriptions">Subscriptions</option>
+                        <option value="Other" id="other">Other</option>
+                    </select>                    
 
-                    <input type="text" id="amount" name="amount" placeholder="Amount">
+
+                    <input type="number" id="amount" step="any" name="amount" placeholder="Amount">
 
                     <button class="submit" value="Add Task">Add</button>
                 </div>
@@ -58,6 +65,9 @@
             </table>
         </div>
         {% endif %}
+        <div class="total-amount">
+            <h3>Total: GH₵ {{ "%.2f" | format(total_amount) }}</h3>
+        </div>
     </div>
 </div>
 <div class="footer">
